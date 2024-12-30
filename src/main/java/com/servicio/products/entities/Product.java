@@ -8,6 +8,7 @@ import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.Table;
+import jakarta.persistence.Transient;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -27,5 +28,8 @@ public class Product {
 
     @Column(name = "create_at")
     private LocalDate createAt;
+
+    @Transient
+    private int port;
 
 }
