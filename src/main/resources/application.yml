@@ -1,5 +1,5 @@
 server:
-  port: 8001
+  port: ${PORT:0} #Asignación automática de puerto
 
 
 spring:
@@ -18,3 +18,5 @@ eureka:
   client:
     serviceUrl:
       defaultZone: http://localhost:8761/eureka/
+  instance:
+    instance-id: ${spring.cloud.client.hostname}:${spring.application.name}:${random.value}
